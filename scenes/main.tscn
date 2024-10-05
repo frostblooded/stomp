@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cpmui5ydyccav"]
+[gd_scene load_steps=12 format=3 uid="uid://cpmui5ydyccav"]
 
 [ext_resource type="PackedScene" uid="uid://blyya8esxue02" path="res://scenes/stomp.tscn" id="1_yi5ub"]
 [ext_resource type="Script" path="res://scripts/ui.gd" id="2_rw2pp"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/guy_spawner.gd" id="4_vegmr"]
 [ext_resource type="PackedScene" uid="uid://iemituahqg8s" path="res://scenes/guy.tscn" id="5_s1il5"]
 [ext_resource type="Script" path="res://scripts/spawner_manager.gd" id="6_ohlu0"]
+[ext_resource type="AudioStream" uid="uid://dnitcpd2bfee" path="res://assets/music.wav" id="8_qmvy4"]
 
 [sub_resource type="Gradient" id="Gradient_8nc7c"]
 offsets = PackedFloat32Array(0)
@@ -96,3 +97,8 @@ position = Vector2(576, -2268)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
 guys_count_to_spawn = 120
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_qmvy4")
+volume_db = -5.0
+autoplay = true

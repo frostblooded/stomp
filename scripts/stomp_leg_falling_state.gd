@@ -3,6 +3,7 @@ extends State
 
 @export var stomp: Stomp
 @export var leg: Leg
+@export var leg_fall_audio_player: AudioStreamPlayer2D
 
 @export var stomp_preparation_state: StompPreparationState
 
@@ -24,6 +25,9 @@ func enter(_parent: Node2D) -> void:
         if guy:
             guy.die()
     
+    Helpers.create_camera_shake_tween(1, 10)
+    leg_fall_audio_player.play()
+
     await get_tree().create_timer(1).timeout
 
     var spawner_manager: SpawnerManager = Helpers.get_spawner_manager(self)
@@ -34,7 +38,7 @@ func enter(_parent: Node2D) -> void:
     stomp.shadow_sprite.flip_h = Globals.should_flip_foot_sprite()
     stomp.leg.sprite.flip_h = Globals.should_flip_foot_sprite()
 
-    var camera: Camera2D = Helpers.get_camera(self)
+    var camera: Camera2D = Helpers.get_camera()
     camera.position = next_guy_spawner.global_position
 
     stomp.leg.hide()

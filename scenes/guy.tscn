@@ -1,17 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://iemituahqg8s"]
+[gd_scene load_steps=6 format=3 uid="uid://iemituahqg8s"]
 
 [ext_resource type="Script" path="res://scripts/guy.gd" id="1_g17qj"]
 [ext_resource type="Texture2D" uid="uid://div6nhc4vs27n" path="res://assets/happy_guy.png" id="2_6kovw"]
 [ext_resource type="PackedScene" uid="uid://c44jx4n4h2eq1" path="res://scenes/guy_splatter.tscn" id="2_n7n6m"]
+[ext_resource type="AudioStream" uid="uid://d0u7h1ijajpj4" path="res://assets/guy_death.wav" id="4_fsh4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxiom"]
 size = Vector2(64, 64)
 
-[node name="Guy" type="Node2D" node_paths=PackedStringArray("death_particles", "sprite") groups=["guys"]]
+[node name="Guy" type="Node2D" node_paths=PackedStringArray("death_particles", "sprite", "death_audio_player") groups=["guys"]]
 script = ExtResource("1_g17qj")
 death_particles = NodePath("DeathParticles")
 sprite = NodePath("Sprite2D")
 death_splatter_scene = ExtResource("2_n7n6m")
+death_audio_player = NodePath("DeathAudioPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_6kovw")
@@ -36,3 +38,7 @@ linear_accel_max = -25.95
 scale_amount_min = 5.0
 scale_amount_max = 15.0
 color = Color(0.756863, 0.12549, 0.2, 1)
+
+[node name="DeathAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_fsh4n")
+volume_db = -5.0

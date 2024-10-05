@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://blyya8esxue02"]
+[gd_scene load_steps=10 format=3 uid="uid://blyya8esxue02"]
 
 [ext_resource type="Script" path="res://scripts/stomp.gd" id="1_dj5a0"]
 [ext_resource type="Script" path="res://scripts/state_machine.gd" id="1_uujc5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c4tqjkv4fjqwq" path="res://assets/leg.png" id="4_4ik37"]
 [ext_resource type="Script" path="res://scripts/stomp_preparation_state.gd" id="4_s4ojn"]
 [ext_resource type="Script" path="res://scripts/stomp_leg_falling_state.gd" id="5_sosls"]
+[ext_resource type="AudioStream" uid="uid://blfygyjwtvme4" path="res://assets/stomp.wav" id="8_d8ab4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_syamt"]
 radius = 48.0
@@ -46,8 +47,12 @@ script = ExtResource("4_s4ojn")
 stomp_leg_falling_state = NodePath("../StompLegFallingState")
 stomp = NodePath("../..")
 
-[node name="StompLegFallingState" type="Node" parent="StateMachine" node_paths=PackedStringArray("stomp", "leg", "stomp_preparation_state")]
+[node name="StompLegFallingState" type="Node" parent="StateMachine" node_paths=PackedStringArray("stomp", "leg", "leg_fall_audio_player", "stomp_preparation_state")]
 script = ExtResource("5_sosls")
 stomp = NodePath("../..")
 leg = NodePath("../../Leg")
+leg_fall_audio_player = NodePath("../../LegFallAudioPlayer")
 stomp_preparation_state = NodePath("../StompPreparationState")
+
+[node name="LegFallAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_d8ab4")

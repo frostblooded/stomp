@@ -5,6 +5,7 @@ extends Node2D
 @export var death_particles: CPUParticles2D
 @export var sprite: Sprite2D
 @export var death_splatter_scene: PackedScene
+@export var death_audio_player: AudioStreamPlayer2D
 
 var movement: Vector2 = Vector2.ZERO
 var living_zone: Rect2
@@ -26,6 +27,9 @@ func _process(delta: float) -> void:
 func die() -> void:
     sprite.hide()
 
+    death_audio_player.pitch_scale = randf_range(0.8, 1.2)
+    death_audio_player.play()
+
     var new_splatter: Sprite2D = death_splatter_scene.instantiate()
     new_splatter.position = position
     new_splatter.rotation = randf_range(0, 2 * PI)
@@ -33,4 +37,6 @@ func die() -> void:
 
     death_particles.emitting = true
     await death_particles.finished
+
+    await death_audio_player.finished
     queue_free()
