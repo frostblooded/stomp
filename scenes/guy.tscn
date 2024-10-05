@@ -1,19 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://iemituahqg8s"]
+[gd_scene load_steps=5 format=3 uid="uid://iemituahqg8s"]
 
-[ext_resource type="Texture2D" uid="uid://coxmimlt6ccy8" path="res://icon.svg" id="1_4onkl"]
 [ext_resource type="Script" path="res://scripts/guy.gd" id="1_g17qj"]
+[ext_resource type="Texture2D" uid="uid://div6nhc4vs27n" path="res://assets/happy_guy.png" id="2_6kovw"]
+[ext_resource type="PackedScene" uid="uid://c44jx4n4h2eq1" path="res://scenes/guy_splatter.tscn" id="2_n7n6m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxiom"]
 size = Vector2(64, 64)
 
-[node name="Guy" type="Node2D" groups=["guys"]]
+[node name="Guy" type="Node2D" node_paths=PackedStringArray("death_particles", "sprite") groups=["guys"]]
 script = ExtResource("1_g17qj")
+death_particles = NodePath("DeathParticles")
+sprite = NodePath("Sprite2D")
+death_splatter_scene = ExtResource("2_n7n6m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_4onkl")
+texture = ExtResource("2_6kovw")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_xxiom")
+
+[node name="DeathParticles" type="CPUParticles2D" parent="."]
+emitting = false
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.5
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 400.0
+linear_accel_min = -84.68
+linear_accel_max = -25.95
+scale_amount_min = 5.0
+scale_amount_max = 15.0
+color = Color(0.756863, 0.12549, 0.2, 1)

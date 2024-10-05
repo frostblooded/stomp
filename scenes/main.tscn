@@ -25,6 +25,7 @@ frame_1/duration = 0.5
 [node name="Main" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
+z_index = -100
 position = Vector2(600, -11794.6)
 scale = Vector2(18.377, 25770.7)
 texture = SubResource("GradientTexture1D_dotri")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c44jx4n4h2eq1"]
+
+[ext_resource type="Texture2D" uid="uid://ctx7i7nccttd6" path="res://assets/splatter.png" id="1_0oa1h"]
+
+[node name="GuySplatter" type="Sprite2D"]
+z_index = -10
+position = Vector2(0, -3.8147e-06)
+texture = ExtResource("1_0oa1h")

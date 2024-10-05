@@ -2,6 +2,9 @@ class_name Guy
 extends Node2D
 
 @export var movement_speed: float = 100.0
+@export var death_particles: CPUParticles2D
+@export var sprite: Sprite2D
+@export var death_splatter_scene: PackedScene
 
 var movement: Vector2 = Vector2.ZERO
 var living_zone: Rect2
@@ -18,3 +21,16 @@ func _process(delta: float) -> void:
         movement.y *= -1;
 
     global_position += movement * delta * movement_speed
+    sprite.flip_h = movement.x <= 0
+
+func die() -> void:
+    sprite.hide()
+
+    var new_splatter: Sprite2D = death_splatter_scene.instantiate()
+    new_splatter.position = position
+    new_splatter.rotation = randf_range(0, 2 * PI)
+    get_tree().root.add_child(new_splatter)
+
+    death_particles.emitting = true
+    await death_particles.finished
+    queue_free()

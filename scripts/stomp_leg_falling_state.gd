@@ -22,7 +22,7 @@ func enter(_parent: Node2D) -> void:
         var guy: Guy = area.owner as Guy
 
         if guy:
-            guy.queue_free()
+            guy.die()
     
     await get_tree().create_timer(1).timeout
 
