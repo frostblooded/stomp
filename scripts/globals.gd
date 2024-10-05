@@ -21,3 +21,14 @@ func get_current_foot_side_spawner_offset() -> float:
             return SPAWNER_FOOT_OFFSET
         _:
             return -SPAWNER_FOOT_OFFSET
+
+func get_current_foot_fall_offset() -> Vector2:
+    var offset: Vector2 = Vector2(400, 150)
+
+    if should_flip_foot_sprite():
+        offset.x *= -1
+    
+    return offset
+
+func should_flip_foot_sprite() -> bool:
+    return current_foot_side == FootSide.Left

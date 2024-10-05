@@ -15,4 +15,3 @@ func _ready() -> void:
         new_guy.living_zone = spawn_boundaries
         get_tree().root.add_child.call_deferred(new_guy)
         spawned_guys.push_back(new_guy)
-        print("Spawning guy at ", new_guy.position, " with boundaries ", spawn_boundaries)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cpmui5ydyccav"]
+[gd_scene load_steps=11 format=3 uid="uid://cpmui5ydyccav"]
 
 [ext_resource type="PackedScene" uid="uid://blyya8esxue02" path="res://scenes/stomp.tscn" id="1_yi5ub"]
-[ext_resource type="Texture2D" uid="uid://coxmimlt6ccy8" path="res://icon.svg" id="2_h0wp1"]
 [ext_resource type="Script" path="res://scripts/ui.gd" id="2_rw2pp"]
+[ext_resource type="Texture2D" uid="uid://v4mdf6j0pks2" path="res://assets/space_bar.png" id="3_t3nut"]
+[ext_resource type="Texture2D" uid="uid://c5otsiyqcktn6" path="res://assets/space_bar_pressed.png" id="4_6d16j"]
 [ext_resource type="Script" path="res://scripts/guy_spawner.gd" id="4_vegmr"]
 [ext_resource type="PackedScene" uid="uid://iemituahqg8s" path="res://scenes/guy.tscn" id="5_s1il5"]
 [ext_resource type="Script" path="res://scripts/spawner_manager.gd" id="6_ohlu0"]
@@ -13,6 +14,13 @@ colors = PackedColorArray(0.1408, 0.64, 0.46528, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_dotri"]
 gradient = SubResource("Gradient_8nc7c")
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_hjs7s"]
+frames = 2
+frame_0/texture = ExtResource("3_t3nut")
+frame_0/duration = 0.5
+frame_1/texture = ExtResource("4_6d16j")
+frame_1/duration = 0.5
 
 [node name="Main" type="Node2D"]
 
@@ -50,7 +58,7 @@ offset_right = 56.0
 offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("2_h0wp1")
+texture = SubResource("AnimatedTexture_hjs7s")
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(576, 324)
@@ -74,16 +82,16 @@ guys_count_to_spawn = 40
 position = Vector2(576, -972)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
-guys_count_to_spawn = 50
+guys_count_to_spawn = 60
 
 [node name="GuySpawner4" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -1620)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
-guys_count_to_spawn = 60
+guys_count_to_spawn = 80
 
 [node name="GuySpawner5" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -2268)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
-guys_count_to_spawn = 70
+guys_count_to_spawn = 120
