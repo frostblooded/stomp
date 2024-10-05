@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://blyya8esxue02"]
+
+[ext_resource type="Script" path="res://scripts/stomp.gd" id="1_dj5a0"]
+[ext_resource type="Script" path="res://scripts/state_machine.gd" id="1_uujc5"]
+[ext_resource type="Texture2D" uid="uid://coxmimlt6ccy8" path="res://icon.svg" id="2_vf08o"]
+[ext_resource type="Script" path="res://scripts/leg.gd" id="3_uglpb"]
+[ext_resource type="Script" path="res://scripts/stomp_preparation_state.gd" id="4_s4ojn"]
+[ext_resource type="Script" path="res://scripts/stomp_leg_falling_state.gd" id="5_sosls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxypb"]
+size = Vector2(112, 176)
+
+[node name="Stomp" type="Node2D" node_paths=PackedStringArray("shadow_sprite")]
+script = ExtResource("1_dj5a0")
+shadow_sprite = NodePath("ShadowSprite")
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, 0)
+scale = Vector2(0.9375, 1.5)
+texture = ExtResource("2_vf08o")
+
+[node name="Leg" type="Node2D" parent="." node_paths=PackedStringArray("area")]
+script = ExtResource("3_uglpb")
+area = NodePath("Area2D")
+
+[node name="LegSprite" type="Sprite2D" parent="Leg"]
+position = Vector2(72, 0)
+scale = Vector2(2, 1.5)
+texture = ExtResource("2_vf08o")
+
+[node name="Area2D" type="Area2D" parent="Leg"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leg/Area2D"]
+shape = SubResource("RectangleShape2D_fxypb")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("1_uujc5")
+initial_state = NodePath("StompPreparationState")
+
+[node name="StompPreparationState" type="Node" parent="StateMachine" node_paths=PackedStringArray("stomp_leg_falling_state", "stomp_shadow_sprite")]
+script = ExtResource("4_s4ojn")
+stomp_leg_falling_state = NodePath("../StompLegFallingState")
+stomp_shadow_sprite = NodePath("../../ShadowSprite")
+
+[node name="StompLegFallingState" type="Node" parent="StateMachine" node_paths=PackedStringArray("leg")]
+script = ExtResource("5_sosls")
+leg = NodePath("../../Leg")

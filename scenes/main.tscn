@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpmui5ydyccav"]
+
+[ext_resource type="PackedScene" uid="uid://blyya8esxue02" path="res://scenes/stomp.tscn" id="1_yi5ub"]
+[ext_resource type="Texture2D" uid="uid://coxmimlt6ccy8" path="res://icon.svg" id="2_h0wp1"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="2_rw2pp"]
+[ext_resource type="Script" path="res://scripts/guy_spawner.gd" id="4_vegmr"]
+[ext_resource type="PackedScene" uid="uid://iemituahqg8s" path="res://scenes/guy.tscn" id="5_s1il5"]
+
+[sub_resource type="Gradient" id="Gradient_8nc7c"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.1408, 0.64, 0.46528, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dotri"]
+gradient = SubResource("Gradient_8nc7c")
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(615, -1084.94)
+scale = Vector2(-1530.77, 3839.47)
+texture = SubResource("GradientTexture1D_dotri")
+
+[node name="Stomp" parent="." instance=ExtResource("1_yi5ub")]
+position = Vector2(712, 320)
+
+[node name="UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("space_tutorial_texture")]
+unique_name_in_owner = true
+script = ExtResource("2_rw2pp")
+space_tutorial_texture = NodePath("Control/SpaceTutorialTexture")
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpaceTutorialTexture" type="TextureRect" parent="UI/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -184.0
+offset_right = 56.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_h0wp1")
+
+[node name="GuySpawner" type="Node" parent="." node_paths=PackedStringArray("spawn_timer")]
+script = ExtResource("4_vegmr")
+spawn_timer = NodePath("SpawnTimer")
+guy_scene = ExtResource("5_s1il5")
+
+[node name="SpawnTimer" type="Timer" parent="GuySpawner"]
+wait_time = 0.1
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(576, 328)
