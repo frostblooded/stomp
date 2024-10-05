@@ -3,6 +3,8 @@ extends State
 
 @export var leg: Leg
 
+@export var stomp_preparation_state: StompPreparationState
+
 func _enter_tree() -> void:
     leg.hide()
 
@@ -20,3 +22,7 @@ func enter(_parent: Node2D) -> void:
 
         if guy:
             guy.queue_free()
+    
+    var spawner_manager: SpawnerManager = Helpers.get_spawner_manager(self)
+    spawner_manager.advance_spawner()
+    transitioned.emit(stomp_preparation_state)

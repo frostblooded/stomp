@@ -4,6 +4,7 @@ extends Node2D
 @export var movement_speed: float = 100.0
 
 var movement: Vector2 = Vector2.ZERO
+var living_zone: Rect2
 
 func _ready() -> void:
     var rand_x: float = randf() * 2 - 1
@@ -11,11 +12,19 @@ func _ready() -> void:
     movement = Vector2(rand_x, rand_y).normalized()
 
 func _process(delta: float) -> void:
-    var camera_rect: Rect2 = Helpers.get_camera_rect(self)
-
-    if position.x <= camera_rect.position.x or position.x >= camera_rect.end.x:
+    if global_position.x <= living_zone.position.x or global_position.x >= living_zone.end.x:
+        print("Switching x")
+        print("My position: ", global_position)
+        print("Living zone position: ", living_zone.position)
+        print("Living zone end: ", living_zone.end)
+        print("Living zone size: ", living_zone.size)
         movement.x *= -1;
-    if position.y <= camera_rect.position.y or position.y >= camera_rect.end.y:
+    if global_position.y <= living_zone.position.y or global_position.y >= living_zone.end.y:
+        print("Switching y")
+        print("My position: ", global_position)
+        print("Living zone position: ", living_zone.position)
+        print("Living zone end: ", living_zone.end)
+        print("Living zone size: ", living_zone.size)
         movement.y *= -1;
 
-    position += movement * delta * movement_speed
+    global_position += movement * delta * movement_speed

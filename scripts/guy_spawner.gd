@@ -1,22 +1,18 @@
 class_name GuySpawner
-extends Node
+extends Node2D
 
-@export var spawn_timer: Timer
 @export var guy_scene: PackedScene
-
-var guy_limit: int = 50
+@export var guys_count_to_spawn: int = 30
+var spawned_guys: Array[Guy]
 
 func _ready() -> void:
-    spawn_timer.start()
-    spawn_timer.timeout.connect(spawn)
+    var spawn_boundaries: Rect2 = Helpers.get_viewport_rect_around(global_position)
 
-func spawn() -> void:
-    var currently_spawned_guys: int = get_tree().get_nodes_in_group("guys").size()
-    if currently_spawned_guys >= guy_limit:
-        return
-
-    var camera_rect: Rect2 = Helpers.get_camera_rect(self)
-    var new_guy: Node2D = guy_scene.instantiate()
-    new_guy.position.x = randf_range(camera_rect.position.x, camera_rect.end.x)
-    new_guy.position.y = randf_range(camera_rect.position.y, camera_rect.end.y)
-    get_tree().root.add_child(new_guy)
+    for i: int in guys_count_to_spawn:
+        var new_guy: Guy = guy_scene.instantiate()
+        new_guy.global_position.x = randf_range(spawn_boundaries.position.x, spawn_boundaries.end.x)
+        new_guy.global_position.y = randf_range(spawn_boundaries.position.y, spawn_boundaries.end.y)
+        new_guy.living_zone = spawn_boundaries
+        get_tree().root.add_child.call_deferred(new_guy)
+        spawned_guys.push_back(new_guy)
+        print("Spawning guy at ", new_guy.position, " with boundaries ", spawn_boundaries)
