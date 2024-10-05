@@ -37,11 +37,11 @@ shape = SubResource("RectangleShape2D_fxypb")
 script = ExtResource("1_uujc5")
 initial_state = NodePath("StompPreparationState")
 
-[node name="StompPreparationState" type="Node" parent="StateMachine" node_paths=PackedStringArray("stomp_leg_falling_state", "stomp", "stomp_shadow_sprite")]
+[node name="StompPreparationState" type="Node" parent="StateMachine" node_paths=PackedStringArray("stomp_leg_falling_state", "stomp", "leg")]
 script = ExtResource("4_s4ojn")
 stomp_leg_falling_state = NodePath("../StompLegFallingState")
 stomp = NodePath("../..")
-stomp_shadow_sprite = NodePath("../../ShadowSprite")
+leg = NodePath("../../Leg")
 
 [node name="StompLegFallingState" type="Node" parent="StateMachine" node_paths=PackedStringArray("leg", "stomp_preparation_state")]
 script = ExtResource("5_sosls")

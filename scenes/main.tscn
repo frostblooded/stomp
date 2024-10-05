@@ -22,7 +22,7 @@ scale = Vector2(18.377, 25770.7)
 texture = SubResource("GradientTexture1D_dotri")
 
 [node name="Stomp" parent="." instance=ExtResource("1_yi5ub")]
-position = Vector2(712, 324)
+position = Vector2(576, 324)
 
 [node name="UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("space_tutorial_texture")]
 script = ExtResource("2_rw2pp")
@@ -68,18 +68,22 @@ guy_scene = ExtResource("5_s1il5")
 position = Vector2(576, -324)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
+guys_count_to_spawn = 40
 
 [node name="GuySpawner3" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -972)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
+guys_count_to_spawn = 50
 
 [node name="GuySpawner4" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -1620)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
+guys_count_to_spawn = 60
 
 [node name="GuySpawner5" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -2268)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
+guys_count_to_spawn = 70

@@ -25,4 +25,5 @@ func enter(_parent: Node2D) -> void:
     
     var spawner_manager: SpawnerManager = Helpers.get_spawner_manager(self)
     spawner_manager.advance_spawner()
+    Globals.switch_foot_side()
     transitioned.emit(stomp_preparation_state)
