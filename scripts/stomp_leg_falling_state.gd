@@ -31,7 +31,15 @@ func enter(_parent: Node2D) -> void:
     await get_tree().create_timer(1).timeout
 
     var spawner_manager: SpawnerManager = Helpers.get_spawner_manager(self)
-    spawner_manager.advance_spawner()
+    spawner_manager.register_stomp()
+
+    if spawner_manager.can_advance_spawner():
+        spawner_manager.advance_spawner()
+    elif spawner_manager.stomps_at_current_spawner == 1:
+        var current_spawner: GuySpawner = spawner_manager.get_current_spawner()
+        var dialogue_manager: DialogueManger = Helpers.get_dialogue_manager(self)
+        dialogue_manager.start_dialogue(current_spawner.multiple_stomps_dialogue)
+
     var next_guy_spawner: GuySpawner = spawner_manager.get_current_spawner()
 
     Globals.switch_foot_side()

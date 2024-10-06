@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://wfqn5wx5e8uu"]
+
+[ext_resource type="Script" path="res://scripts/dialogue.gd" id="1_2yxgv"]
+
+[resource]
+script = ExtResource("1_2yxgv")
+lines = Array[String](["Now that I think about it...", "While we are at it...", "Can you stomp on them some more? They don't stop complaining.", "I bet they'll complain about being stomped on next..."])

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://gaj74tv0b8qd"]
+
+[ext_resource type="Script" path="res://scripts/dialogue.gd" id="1_3rlm7"]
+
+[resource]
+script = ExtResource("1_3rlm7")
+lines = Array[String](["Aaaand we are outside the city!", "Thanks for helping out.", "I think we hit some innocent civilians as well but that's okay.", "I'm sure they were secretly Activist Guys as well.", "Please do come by again some time.", "And thanks for playing! :)"])

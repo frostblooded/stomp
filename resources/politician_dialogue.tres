@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_8gs78")
-lines = Array[String](["You're getting close to the parlament here.", "There are going to be a lot of Politics Guys passing through.", "Please make sure you don't step on them.", "It is preferrable if you have to step on some Normal Guys to avoid stepping on Politics Guys.", "You can recognize the Politics Guys by the blue folders they carry."])
+lines = Array[String](["You're getting close to the parlament here.", "There are going to be a lot of Politics Guys passing through.", "Make sure you don't step on them.", "If you have to, step on some Normal Guys to avoid stepping on Politics Guys.", "You can recognize the Politics Guys by the blue folders they carry."])

@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_hcfmt")
-lines = Array[String](["Hey, hey! Watch where you're going!", "There are Guys walking here!", "If you are going to pass through our lands,", "make sure you don't kill us, alright?", "I'll be taking points for each Guy killed."])
+lines = Array[String](["Hey, hey! Watch where you're going! There are Guys walking here!", "If you are going to pass through our lands,", "make sure you don't kill us, alright?", "I'll be taking points for each Guy killed."])
