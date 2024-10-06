@@ -18,6 +18,8 @@ extends Node2D
 @export var guy_container: Node2D
 @onready var spawn_boundaries: Rect2 = Helpers.get_viewport_rect_around(global_position)
 
+var spawned_guys: Array[Guy]
+
 func _ready() -> void:
     for i: int in guys_count_to_spawn:
         spawn_guy(guy_scene)
@@ -30,6 +32,14 @@ func _ready() -> void:
 
     for i: int in activist_guys_count_to_spawn:
         spawn_guy(activist_guy_scene)
+
+func _process(_delta: float) -> void:
+    var spawner_manager: SpawnerManager = Helpers.get_spawner_manager(self)
+    var should_process: bool = spawner_manager.spawner_should_process(self)
+
+    for guy: Guy in spawned_guys:
+        if is_instance_valid(guy):
+            guy.set_process(should_process)
     
 func spawn_guy(scene: PackedScene) -> void:
     var new_guy: Guy = scene.instantiate()
@@ -37,3 +47,4 @@ func spawn_guy(scene: PackedScene) -> void:
     new_guy.global_position.y = randf_range(spawn_boundaries.position.y + 5, spawn_boundaries.end.y - 5)
     new_guy.living_zone = spawn_boundaries
     guy_container.add_child.call_deferred(new_guy)
+    spawned_guys.push_back(new_guy)
