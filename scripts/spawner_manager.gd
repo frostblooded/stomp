@@ -26,7 +26,7 @@ func register_stomp() -> void:
 func can_advance_spawner() -> bool:
     return stomps_at_current_spawner == get_current_spawner().stomps_to_advance
 
-func spawner_should_process(checked_spawner: GuySpawner) -> bool:
+func spawner_should_be_active(checked_spawner: GuySpawner) -> bool:
     for i: int in spawners.size():
         var spawner: GuySpawner = spawners[i]
 
