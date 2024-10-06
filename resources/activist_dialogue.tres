@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://o81ijc8j4bfl"]
+
+[ext_resource type="Script" path="res://scripts/dialogue.gd" id="1_du05x"]
+
+[resource]
+script = ExtResource("1_du05x")
+lines = Array[String](["Good news! We are away from the banks now.", "Even better, acually! We are at the protests!", "There are a bunch of activists here.", "Please make sure to step on them. They are a big neusance.", "You can recognize them."])

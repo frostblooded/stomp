@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bwlgtweowbn6g"]
+
+[ext_resource type="Script" path="res://scripts/dialogue.gd" id="1_hcfmt"]
+
+[resource]
+script = ExtResource("1_hcfmt")
+lines = Array[String](["Hey! Hey! Watch where you're going!", "There are Guys walking here!", "If you are going to pass through our lands,", "make sure you don't kill us, alright?"])

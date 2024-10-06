@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cpmui5ydyccav"]
+[gd_scene load_steps=22 format=3 uid="uid://cpmui5ydyccav"]
 
 [ext_resource type="PackedScene" uid="uid://blyya8esxue02" path="res://scenes/stomp.tscn" id="1_yi5ub"]
 [ext_resource type="Script" path="res://scripts/ui.gd" id="2_rw2pp"]
@@ -13,7 +13,11 @@
 [ext_resource type="AudioStream" uid="uid://dnitcpd2bfee" path="res://assets/music.wav" id="8_qmvy4"]
 [ext_resource type="PackedScene" uid="uid://dfkeem2qje7xt" path="res://scenes/banker_guy.tscn" id="9_epy1p"]
 [ext_resource type="PackedScene" uid="uid://k1h8vqyx6xj6" path="res://scenes/activist_guy.tscn" id="10_qjprp"]
+[ext_resource type="Resource" uid="uid://bwlgtweowbn6g" path="res://resources/intro_dialogue.tres" id="13_edxw1"]
+[ext_resource type="Resource" uid="uid://26c1ohwk8uw2" path="res://resources/politician_dialogue.tres" id="14_d2i00"]
 [ext_resource type="Script" path="res://scripts/dialogue_manager.gd" id="14_td0qo"]
+[ext_resource type="Resource" uid="uid://c2ldmvxhrdrsq" path="res://resources/banker_dialogue.tres" id="15_okhtm"]
+[ext_resource type="Resource" uid="uid://o81ijc8j4bfl" path="res://resources/activist_dialogue.tres" id="16_8gtpb"]
 
 [sub_resource type="Gradient" id="Gradient_8nc7c"]
 offsets = PackedFloat32Array(0)
@@ -121,6 +125,7 @@ theme_override_constants/margin_bottom = 25
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.383086, 0.33661, 0.321646, 1)
 theme_override_font_sizes/font_size = 50
 text = "Hey! Watch where you're going. There are Guys walking here!"
@@ -142,6 +147,7 @@ politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
 guys_count_to_spawn = 10
+dialogue = ExtResource("13_edxw1")
 
 [node name="GuySpawner2" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -324)
@@ -185,7 +191,8 @@ guy_scene = ExtResource("5_s1il5")
 politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
-guys_count_to_spawn = 50
+politician_guys_count_to_spawn = 20
+dialogue = ExtResource("14_d2i00")
 
 [node name="GuySpawner7" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -3576)
@@ -194,7 +201,8 @@ guy_scene = ExtResource("5_s1il5")
 politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
-guys_count_to_spawn = 50
+guys_count_to_spawn = 25
+politician_guys_count_to_spawn = 25
 
 [node name="GuySpawner8" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -4224)
@@ -203,7 +211,7 @@ guy_scene = ExtResource("5_s1il5")
 politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
-guys_count_to_spawn = 50
+politician_guys_count_to_spawn = 30
 
 [node name="GuySpawner9" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -4872)
@@ -212,7 +220,8 @@ guy_scene = ExtResource("5_s1il5")
 politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
-guys_count_to_spawn = 50
+guys_count_to_spawn = 40
+politician_guys_count_to_spawn = 20
 
 [node name="GuySpawner10" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -5520)
@@ -221,7 +230,8 @@ guy_scene = ExtResource("5_s1il5")
 politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
-guys_count_to_spawn = 50
+guys_count_to_spawn = 10
+politician_guys_count_to_spawn = 50
 
 [node name="GuySpawner11" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -6244)
@@ -230,7 +240,10 @@ guy_scene = ExtResource("5_s1il5")
 politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
-guys_count_to_spawn = 50
+guys_count_to_spawn = 25
+politician_guys_count_to_spawn = 5
+banker_guys_count_to_spawn = 20
+dialogue = ExtResource("15_okhtm")
 
 [node name="GuySpawner12" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -6892)
@@ -239,7 +252,8 @@ guy_scene = ExtResource("5_s1il5")
 politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
-guys_count_to_spawn = 50
+guys_count_to_spawn = 25
+banker_guys_count_to_spawn = 25
 
 [node name="GuySpawner13" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -7540)
@@ -248,7 +262,8 @@ guy_scene = ExtResource("5_s1il5")
 politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
-guys_count_to_spawn = 50
+guys_count_to_spawn = 20
+banker_guys_count_to_spawn = 30
 
 [node name="GuySpawner14" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -8188)
@@ -257,7 +272,7 @@ guy_scene = ExtResource("5_s1il5")
 politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
-guys_count_to_spawn = 50
+banker_guys_count_to_spawn = 20
 
 [node name="GuySpawner15" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -8836)
@@ -266,7 +281,8 @@ guy_scene = ExtResource("5_s1il5")
 politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
-guys_count_to_spawn = 50
+guys_count_to_spawn = 10
+banker_guys_count_to_spawn = 40
 
 [node name="GuySpawner16" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -9496)
@@ -275,7 +291,9 @@ guy_scene = ExtResource("5_s1il5")
 politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
-guys_count_to_spawn = 50
+guys_count_to_spawn = 20
+activist_guys_count_to_spawn = 40
+dialogue = ExtResource("16_8gtpb")
 
 [node name="GuySpawner17" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -10144)
@@ -284,7 +302,7 @@ guy_scene = ExtResource("5_s1il5")
 politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
-guys_count_to_spawn = 50
+activist_guys_count_to_spawn = 25
 
 [node name="GuySpawner18" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -10792)
@@ -293,7 +311,8 @@ guy_scene = ExtResource("5_s1il5")
 politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
-guys_count_to_spawn = 50
+guys_count_to_spawn = 20
+activist_guys_count_to_spawn = 60
 
 [node name="GuySpawner19" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -11440)
@@ -302,7 +321,7 @@ guy_scene = ExtResource("5_s1il5")
 politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
-guys_count_to_spawn = 50
+activist_guys_count_to_spawn = 70
 
 [node name="GuySpawner20" type="Node2D" parent="SpawnerManager"]
 position = Vector2(576, -12088)
@@ -311,7 +330,8 @@ guy_scene = ExtResource("5_s1il5")
 politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
-guys_count_to_spawn = 50
+guys_count_to_spawn = 10
+activist_guys_count_to_spawn = 100
 
 [node name="MusicAudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_qmvy4")

@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://cokvydpmyd7j2"]
-
-[ext_resource type="Script" path="res://scripts/dialogue.gd" id="1_7731o"]
-
-[resource]
-script = ExtResource("1_7731o")
-lines = Array[String](["Woah! What's that.", "Oh, my bad.", "It was just my nose. It's really long."])
