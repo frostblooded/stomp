@@ -15,6 +15,9 @@ func get_spawner_manager(node: Node) -> SpawnerManager:
 func get_dialogue_manager(node: Node) -> DialogueManger:
     return find_child_global(node, "DialogueManager")
 
+func get_score_manager(node: Node) -> ScoreManager:
+    return find_child_global(node, "ScoreManager")
+
 func get_viewport_rect_around(position: Vector2) -> Rect2:
     var viewport_size: Vector2 = get_viewport().get_visible_rect().size
     var viewport_half_size: Vector2 = viewport_size / 2

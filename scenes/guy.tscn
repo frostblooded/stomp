@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c44jx4n4h2eq1" path="res://scenes/guy_splatter.tscn" id="2_n7n6m"]
 [ext_resource type="AudioStream" uid="uid://d0u7h1ijajpj4" path="res://assets/guy_death.wav" id="4_fsh4n"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxiom"]
-size = Vector2(64, 64)
+[sub_resource type="CircleShape2D" id="CircleShape2D_e36bl"]
+radius = 32.0
 
 [node name="Guy" type="Node2D" node_paths=PackedStringArray("death_particles", "sprite", "death_audio_player") groups=["guys"]]
 script = ExtResource("1_g17qj")
@@ -21,7 +21,7 @@ texture = ExtResource("2_6kovw")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_xxiom")
+shape = SubResource("CircleShape2D_e36bl")
 
 [node name="DeathParticles" type="CPUParticles2D" parent="."]
 emitting = false

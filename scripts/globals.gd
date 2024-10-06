@@ -22,6 +22,13 @@ func get_current_foot_side_spawner_offset() -> float:
         _:
             return -SPAWNER_FOOT_OFFSET
 
+func get_current_foot_side_collision_x_scale() -> float:
+    match current_foot_side:
+        FootSide.Right:
+            return 1
+        _:
+            return -1
+
 func get_current_foot_fall_offset() -> Vector2:
     var offset: Vector2 = Vector2(400, 150)
 

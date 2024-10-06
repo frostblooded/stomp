@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_7kngh")
-lines = Array[String](["Okay, we got through parlament.", "Oh no, it's even worse now!", "We are at... the banks!", "Remember how I told you not to step on the politicians?", "It is even more important not to step on the bankers. They run the whole economy.", "You can recognize them by the bags of money they carry."])
+lines = Array[String](["Okay, we got through parlament.", "Oh no, it's even worse now!", "We are at... the banks!", "Remember how I told you not to step on the Politics Guys?", "It is even more important not to step on the Bank Guys.", "Please make sure to step on some other Guys instead!", "You can recognize the Bank Guys by the bags of money they carry."])

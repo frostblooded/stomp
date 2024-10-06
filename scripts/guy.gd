@@ -6,6 +6,7 @@ extends Node2D
 @export var sprite: Sprite2D
 @export var death_splatter_scene: PackedScene
 @export var death_audio_player: AudioStreamPlayer2D
+@export var death_score_modification: int = -10
 
 var movement: Vector2 = Vector2.ZERO
 var living_zone: Rect2
@@ -26,6 +27,9 @@ func _process(delta: float) -> void:
 
 func die() -> void:
     sprite.hide()
+
+    var score_manager: ScoreManager = Helpers.get_score_manager(self)
+    score_manager.modify_score(death_score_modification)
 
     death_audio_player.pitch_scale = randf_range(0.8, 1.2)
     death_audio_player.play()

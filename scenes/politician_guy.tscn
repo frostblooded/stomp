@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d2spq334bkmbi" path="res://assets/politician_guy.png" id="2_rj8vq"]
 
 [node name="PoliticianGuy" instance=ExtResource("1_y3c6k")]
+death_score_modification = -20
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_rj8vq")

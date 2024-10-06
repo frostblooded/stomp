@@ -37,6 +37,7 @@ func enter(_parent: Node2D) -> void:
     Globals.switch_foot_side()
     stomp.shadow_sprite.flip_h = Globals.should_flip_foot_sprite()
     stomp.leg.sprite.flip_h = Globals.should_flip_foot_sprite()
+    leg.area.scale.x = Globals.get_current_foot_side_collision_x_scale()
 
     var camera: Camera2D = Helpers.get_camera()
     camera.position = next_guy_spawner.global_position
