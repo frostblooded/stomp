@@ -11,6 +11,8 @@ extends Node2D
 @export var banker_guys_count_to_spawn: int = 0
 @export var activist_guys_count_to_spawn: int = 0
 
+@export var dialogue: Dialogue
+
 @onready var spawn_boundaries: Rect2 = Helpers.get_viewport_rect_around(global_position)
 
 func _ready() -> void:

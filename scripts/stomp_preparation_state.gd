@@ -17,8 +17,11 @@ func enter(_parent: Node2D) -> void:
     ui.try_show_space_tutorial()
 
     var spawner_manager: SpawnerManager = Helpers.get_spawner_manager(self)
-    var next_guy_spawner: GuySpawner = spawner_manager.get_current_spawner()
-    initial_stomp_position = next_guy_spawner.global_position + Vector2(Globals.get_current_foot_side_spawner_offset(), 0)
+    var current_spawner: GuySpawner = spawner_manager.get_current_spawner()
+    initial_stomp_position = current_spawner.global_position + Vector2(Globals.get_current_foot_side_spawner_offset(), 0)
+
+    var dialogue_manager: DialogueManger = Helpers.get_dialogue_manager(self)
+    dialogue_manager.start_dialogue(current_spawner.dialogue)
 
 func state_process(_delta: float, _parent: Node) -> void:
     var time: float = Time.get_unix_time_from_system()
@@ -26,7 +29,8 @@ func state_process(_delta: float, _parent: Node) -> void:
     stomp.position.y = initial_stomp_position.y + cos(time) * 50
 
     if Input.is_action_just_pressed("stomp"):
-        transitioned.emit(stomp_leg_falling_state)
+        if stomp.can_stomp():
+            transitioned.emit(stomp_leg_falling_state)
 
 func exit(_parent: Node2D) -> void:
     var ui: UI = Helpers.get_ui(self)
