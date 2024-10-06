@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://5mqchfghbd04"]
+
+[ext_resource type="PackedScene" uid="uid://iemituahqg8s" path="res://scenes/guy.tscn" id="1_y3c6k"]
+[ext_resource type="Texture2D" uid="uid://d2spq334bkmbi" path="res://assets/politician_guy.png" id="2_rj8vq"]
+
+[node name="PoliticianGuy" instance=ExtResource("1_y3c6k")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_rj8vq")
