@@ -15,6 +15,7 @@ extends Node2D
 @export var dialogue: Dialogue
 @export var multiple_stomps_dialogue: Dialogue
 
+@export var guy_container: Node2D
 @onready var spawn_boundaries: Rect2 = Helpers.get_viewport_rect_around(global_position)
 
 func _ready() -> void:
@@ -35,4 +36,4 @@ func spawn_guy(scene: PackedScene) -> void:
     new_guy.global_position.x = randf_range(spawn_boundaries.position.x + 5, spawn_boundaries.end.x - 5)
     new_guy.global_position.y = randf_range(spawn_boundaries.position.y + 5, spawn_boundaries.end.y - 5)
     new_guy.living_zone = spawn_boundaries
-    get_tree().root.add_child.call_deferred(new_guy)
+    guy_container.add_child.call_deferred(new_guy)

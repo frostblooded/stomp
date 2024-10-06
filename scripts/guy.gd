@@ -4,9 +4,12 @@ extends Node2D
 @export var movement_speed: float = 100.0
 @export var death_particles: CPUParticles2D
 @export var sprite: Sprite2D
+@export var shadow_sprite: Sprite2D
 @export var death_splatter_scene: PackedScene
 @export var death_audio_player: AudioStreamPlayer2D
 @export var death_score_modification: int = -10
+
+@export var floating_text_scene: PackedScene
 
 var movement: Vector2 = Vector2.ZERO
 var living_zone: Rect2
@@ -32,6 +35,12 @@ func _process(delta: float) -> void:
 
 func die() -> void:
     sprite.hide()
+    shadow_sprite.hide()
+
+    var floating_text: Label = floating_text_scene.instantiate()
+    floating_text.global_position = global_position
+    floating_text.text = str(death_score_modification)
+    get_tree().root.add_child(floating_text)
 
     var score_manager: ScoreManager = Helpers.get_score_manager(self)
     score_manager.modify_score(death_score_modification)

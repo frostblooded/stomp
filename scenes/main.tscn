@@ -150,7 +150,7 @@ position_smoothing_enabled = true
 z_index = -100
 script = ExtResource("6_ohlu0")
 
-[node name="GuySpawner" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, 324)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
@@ -159,11 +159,12 @@ banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
 guys_count_to_spawn = 10
 dialogue = ExtResource("13_edxw1")
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner"]
 texture = ExtResource("14_pqook")
 
-[node name="GuySpawner2" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner2" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, -324)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
@@ -171,11 +172,12 @@ politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
 guys_count_to_spawn = 15
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner2"]
 texture = ExtResource("14_pqook")
 
-[node name="GuySpawner3" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner3" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, -972)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
@@ -183,22 +185,24 @@ politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
 guys_count_to_spawn = 20
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner3"]
 texture = ExtResource("14_pqook")
 
-[node name="GuySpawner4" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner4" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, -1620)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
 politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner4"]
 texture = ExtResource("14_pqook")
 
-[node name="GuySpawner5" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner5" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, -2268)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
@@ -206,11 +210,12 @@ politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
 guys_count_to_spawn = 40
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner5"]
 texture = ExtResource("14_pqook")
 
-[node name="GuySpawner6" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner6" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, -2904)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
@@ -219,11 +224,12 @@ banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
 politician_guys_count_to_spawn = 20
 dialogue = ExtResource("14_d2i00")
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner6"]
 texture = ExtResource("14_pqook")
 
-[node name="GuySpawner7" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner7" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, -3552)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
@@ -232,11 +238,12 @@ banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
 guys_count_to_spawn = 25
 politician_guys_count_to_spawn = 25
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner7"]
 texture = ExtResource("14_pqook")
 
-[node name="GuySpawner8" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner8" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, -4200)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
@@ -244,11 +251,12 @@ politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
 politician_guys_count_to_spawn = 30
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner8"]
 texture = ExtResource("14_pqook")
 
-[node name="GuySpawner9" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner9" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, -4848)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
@@ -257,11 +265,12 @@ banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
 guys_count_to_spawn = 40
 politician_guys_count_to_spawn = 20
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner9"]
 texture = ExtResource("14_pqook")
 
-[node name="GuySpawner10" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner10" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, -5496)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
@@ -270,11 +279,12 @@ banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
 guys_count_to_spawn = 10
 politician_guys_count_to_spawn = 50
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner10"]
 texture = ExtResource("14_pqook")
 
-[node name="GuySpawner11" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner11" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, -6140)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
@@ -285,11 +295,12 @@ guys_count_to_spawn = 25
 politician_guys_count_to_spawn = 5
 banker_guys_count_to_spawn = 20
 dialogue = ExtResource("15_okhtm")
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner11"]
 texture = ExtResource("14_pqook")
 
-[node name="GuySpawner12" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner12" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, -6788)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
@@ -298,11 +309,12 @@ banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
 guys_count_to_spawn = 25
 banker_guys_count_to_spawn = 25
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner12"]
 texture = ExtResource("14_pqook")
 
-[node name="GuySpawner13" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner13" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, -7436)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
@@ -311,11 +323,12 @@ banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
 guys_count_to_spawn = 20
 banker_guys_count_to_spawn = 30
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner13"]
 texture = ExtResource("14_pqook")
 
-[node name="GuySpawner14" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner14" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, -8084)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
@@ -323,11 +336,12 @@ politician_guy_scene = ExtResource("8_gymil")
 banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
 banker_guys_count_to_spawn = 20
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner14"]
 texture = ExtResource("14_pqook")
 
-[node name="GuySpawner15" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner15" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, -8732)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
@@ -336,11 +350,12 @@ banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
 guys_count_to_spawn = 10
 banker_guys_count_to_spawn = 40
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner15"]
 texture = ExtResource("14_pqook")
 
-[node name="GuySpawner16" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner16" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, -9376)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
@@ -350,11 +365,12 @@ activist_guy_scene = ExtResource("10_qjprp")
 guys_count_to_spawn = 20
 activist_guys_count_to_spawn = 40
 dialogue = ExtResource("16_8gtpb")
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner16"]
 texture = ExtResource("14_pqook")
 
-[node name="GuySpawner17" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner17" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, -10024)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
@@ -363,11 +379,12 @@ banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
 guys_count_to_spawn = 20
 activist_guys_count_to_spawn = 60
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner17"]
 texture = ExtResource("14_pqook")
 
-[node name="GuySpawner18" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner18" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, -10672)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
@@ -376,11 +393,12 @@ banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
 guys_count_to_spawn = 20
 activist_guys_count_to_spawn = 60
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner18"]
 texture = ExtResource("14_pqook")
 
-[node name="GuySpawner19" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner19" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, -11320)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
@@ -389,11 +407,12 @@ banker_guy_scene = ExtResource("9_epy1p")
 activist_guy_scene = ExtResource("10_qjprp")
 guys_count_to_spawn = 0
 activist_guys_count_to_spawn = 200
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner19"]
 texture = ExtResource("14_pqook")
 
-[node name="GuySpawner20" type="Node2D" parent="SpawnerManager"]
+[node name="GuySpawner20" type="Node2D" parent="SpawnerManager" node_paths=PackedStringArray("guy_container")]
 position = Vector2(576, -11968)
 script = ExtResource("4_vegmr")
 guy_scene = ExtResource("5_s1il5")
@@ -404,6 +423,7 @@ guys_count_to_spawn = 0
 activist_guys_count_to_spawn = 300
 stomps_to_advance = 6
 multiple_stomps_dialogue = ExtResource("14_nowkh")
+guy_container = NodePath("../../Guys")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnerManager/GuySpawner20"]
 texture = ExtResource("14_pqook")
@@ -439,3 +459,6 @@ score_label = NodePath("../UI/Control/MarginContainer/ScoreLabel")
 [node name="RoadBackground" type="Sprite2D" parent="."]
 position = Vector2(576, -13264)
 texture = ExtResource("14_pqook")
+
+[node name="Guys" type="Node2D" parent="."]
+y_sort_enabled = true
